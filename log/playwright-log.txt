@@ -1,0 +1,29 @@
+{"level":30,"time":"2021-05-10T00:36:53.999Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Listening on 58793"}
+{"level":30,"time":"2021-05-10T00:36:55.213Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changed active context"}
+{"level":30,"time":"2021-05-10T00:36:55.832Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Video path: undefined"}
+{"level":30,"time":"2021-05-10T00:36:55.832Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changed active page"}
+{"level":30,"time":"2021-05-10T00:37:00.526Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Retrieved text for element text=Olá, Faça seu login containing Olá, Faça seu login"}
+{"level":30,"time":"2021-05-10T00:37:01.612Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Retrieved text for element css=.a-color-state containing \"notebook\""}
+{"level":30,"time":"2021-05-10T00:37:02.240Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Retrieved text for element xpath=//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[7]/div/span/div/div/div[2]/h2/a containing Notebook Dell Inspiron i15-3501-A25P 15.6\" HD 10ª Geração Intel Core i3 4GB 256GB SSD Windows 10 Preto"}
+{"level":30,"time":"2021-05-10T00:37:04.162Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Retrieved text for element css=#productTitle containing Notebook Dell Inspiron i15-3501-A25P 15.6\" HD 10ª Geração Intel Core i3 4GB 256GB SSD Windows 10 Preto"}
+{"level":30,"time":"2021-05-10T00:37:04.457Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changed active context"}
+{"level":30,"time":"2021-05-10T00:37:04.458Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changing current active page"}
+{"level":30,"time":"2021-05-10T00:37:04.458Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changed active page"}
+{"level":30,"time":"2021-05-10T00:37:04.485Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changed active context"}
+{"level":30,"time":"2021-05-10T00:37:04.485Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changing current active page"}
+{"level":30,"time":"2021-05-10T00:37:04.485Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changed active page"}
+{"level":30,"time":"2021-05-10T00:37:05.841Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changed active context"}
+{"level":30,"time":"2021-05-10T00:37:06.573Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Video path: undefined"}
+{"level":30,"time":"2021-05-10T00:37:06.573Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changed active page"}
+{"level":30,"time":"2021-05-10T00:37:11.302Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Retrieved text for element text=Olá, Faça seu login containing Olá, Faça seu login"}
+{"level":30,"time":"2021-05-10T00:37:12.499Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Retrieved text for element css=.a-color-state containing \"bicicleta\""}
+{"level":30,"time":"2021-05-10T00:37:13.454Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Retrieved text for element xpath=//*[@id=\"search\"]/div[1]/div/div[1]/div/span[3]/div[2]/div[7]/div/span/div/div/div[2]/h2/a containing Bicicleta Aro 29 Caloi Velox Preta"}
+{"level":30,"time":"2021-05-10T00:37:15.820Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Retrieved text for element css=#productTitle containing Bicicleta Aro 29 Caloi Velox Preta"}
+{"level":30,"time":"2021-05-10T00:37:19.038Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Retrieved text for element xpath=//*[@id=\"sc-active-cart\"]/div/div/div/h1 containing Carrinho de compras"}
+{"level":30,"time":"2021-05-10T00:37:20.394Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Retrieved text for element text=Fazer login containing Fazer login"}
+{"level":30,"time":"2021-05-10T00:37:20.829Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changed active context"}
+{"level":30,"time":"2021-05-10T00:37:20.829Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changing current active page"}
+{"level":30,"time":"2021-05-10T00:37:20.829Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changed active page"}
+{"level":30,"time":"2021-05-10T00:37:20.862Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changed active context"}
+{"level":30,"time":"2021-05-10T00:37:20.862Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changing current active page"}
+{"level":30,"time":"2021-05-10T00:37:20.862Z","pid":98344,"hostname":"LAPTOP-VPDI66RT","msg":"Changed active page"}

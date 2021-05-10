@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.1 (Python 3.9.4 on win32)" generated="20210509 21:36:52.465" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="c:\rw5\carrinhoAmazon\tests">
+<suite id="s1-s1" name="Buscar" source="c:\rw5\carrinhoAmazon\tests\buscar.robot">
+<test id="s1-s1-t1" name="Buscar produto">
+<kw name="Abrir Navegador" library="base" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210509 21:36:54.158" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210509 21:36:55.159" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210509 21:36:54.158" endtime="20210509 21:36:55.159"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>https://www.amazon.com.br/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210509 21:37:00.109" level="INFO">Successfully initialized new page object and opened url: https://www.amazon.com.br/</msg>
+<status status="PASS" starttime="20210509 21:36:55.159" endtime="20210509 21:37:00.109"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=#nav-link-accountList-nav-line-1</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210509 21:37:00.409" level="INFO">Wait for Element with selector: css=#nav-link-accountList-nav-line-1</msg>
+<status status="PASS" starttime="20210509 21:37:00.110" endtime="20210509 21:37:00.410"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>text=Olá, Faça seu login</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<status status="PASS" starttime="20210509 21:37:00.410" endtime="20210509 21:37:00.532"/>
+</kw>
+<status status="PASS" starttime="20210509 21:36:54.157" endtime="20210509 21:37:00.532"/>
+</kw>
+<kw name="Realizar busca do produto" library="search">
+<arg>notebook</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=#twotabsearchtextbox</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210509 21:37:00.551" level="INFO">Wait for Element with selector: css=#twotabsearchtextbox</msg>
+<status status="PASS" starttime="20210509 21:37:00.534" endtime="20210509 21:37:00.551"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=#twotabsearchtextbox</arg>
+<arg>${produto}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210509 21:37:00.552" level="INFO">Fills the text 'notebook' in the given field.</msg>
+<status status="PASS" starttime="20210509 21:37:00.551" endtime="20210509 21:37:00.599"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=#nav-search-submit-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210509 21:37:00.599" endtime="20210509 21:37:01.185"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=.a-color-state</arg>
+<arg>contains</arg>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<status status="PASS" starttime="20210509 21:37:01.185" endtime="20210509 21:37:01.618"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:00.533" endtime="20210509 21:37:01.619"/>
+</kw>
+<kw name="Selecionar primeiro item da lista de resultados" library="search">
+<kw name="Captar produto selecionado" library="search">
+<kw name="Get Text" library="Browser">
+<var>${produtoSelecionado}</var>
+<arg>xpath=//*[@id="search"]/div[1]/div/div[1]/div/span[3]/div[2]/div[7]/div/span/div/div/div[2]/h2/a</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<msg timestamp="20210509 21:37:02.246" level="INFO">${produtoSelecionado} = Notebook Dell Inspiron i15-3501-A25P 15.6" HD 10ª Geração Intel Core i3 4GB 256GB SSD Windows 10 Preto</msg>
+<status status="PASS" starttime="20210509 21:37:01.624" endtime="20210509 21:37:02.246"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:01.623" endtime="20210509 21:37:02.246"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//*[@id="search"]/div[1]/div/div[1]/div/span[3]/div[2]/div[7]/div/span/div/div/div[2]/h2/a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210509 21:37:02.247" endtime="20210509 21:37:03.193"/>
+</kw>
+<kw name="Captar produto exibido" library="search">
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=#productTitle</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210509 21:37:03.754" level="INFO">Wait for Element with selector: css=#productTitle</msg>
+<status status="PASS" starttime="20210509 21:37:03.195" endtime="20210509 21:37:03.754"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<var>${produtoExibido}</var>
+<arg>css=#productTitle</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<msg timestamp="20210509 21:37:04.168" level="INFO">${produtoExibido} = Notebook Dell Inspiron i15-3501-A25P 15.6" HD 10ª Geração Intel Core i3 4GB 256GB SSD Windows 10 Preto</msg>
+<status status="PASS" starttime="20210509 21:37:03.755" endtime="20210509 21:37:04.168"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:03.194" endtime="20210509 21:37:04.168"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${produtoSelecionado}</arg>
+<arg>${produtoExibido}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210509 21:37:04.168" endtime="20210509 21:37:04.169"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:01.622" endtime="20210509 21:37:04.169"/>
+</kw>
+<kw name="Take Screenshot" library="Browser" type="TEARDOWN">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it to ``path``. Saves it as a png.</doc>
+<msg timestamp="20210509 21:37:04.453" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210509 21:37:04.170" endtime="20210509 21:37:04.453"/>
+</kw>
+<status status="PASS" starttime="20210509 21:36:54.153" endtime="20210509 21:37:04.454"/>
+</test>
+<status status="PASS" starttime="20210509 21:36:52.523" endtime="20210509 21:37:04.584"/>
+</suite>
+<suite id="s1-s2" name="Carrinho" source="c:\rw5\carrinhoAmazon\tests\carrinho.robot">
+<test id="s1-s2-t1" name="Adicionar produto selecionado ao carrinho">
+<kw name="Abrir Navegador" library="base" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20210509 21:37:04.744" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210509 21:37:05.795" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210509 21:37:04.743" endtime="20210509 21:37:05.795"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>https://www.amazon.com.br/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<msg timestamp="20210509 21:37:09.402" level="INFO">Successfully initialized new page object and opened url: https://www.amazon.com.br/</msg>
+<status status="PASS" starttime="20210509 21:37:05.795" endtime="20210509 21:37:09.403"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=#nav-link-accountList-nav-line-1</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210509 21:37:10.614" level="INFO">Wait for Element with selector: css=#nav-link-accountList-nav-line-1</msg>
+<status status="PASS" starttime="20210509 21:37:09.403" endtime="20210509 21:37:10.614"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>text=Olá, Faça seu login</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<status status="PASS" starttime="20210509 21:37:10.614" endtime="20210509 21:37:11.308"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:04.742" endtime="20210509 21:37:11.308"/>
+</kw>
+<kw name="Realizar busca do produto" library="search">
+<arg>bicicleta</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=#twotabsearchtextbox</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210509 21:37:11.344" level="INFO">Wait for Element with selector: css=#twotabsearchtextbox</msg>
+<status status="PASS" starttime="20210509 21:37:11.309" endtime="20210509 21:37:11.345"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=#twotabsearchtextbox</arg>
+<arg>${produto}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<msg timestamp="20210509 21:37:11.346" level="INFO">Fills the text 'bicicleta' in the given field.</msg>
+<status status="PASS" starttime="20210509 21:37:11.345" endtime="20210509 21:37:11.394"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>css=#nav-search-submit-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210509 21:37:11.395" endtime="20210509 21:37:12.041"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=.a-color-state</arg>
+<arg>contains</arg>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<status status="PASS" starttime="20210509 21:37:12.042" endtime="20210509 21:37:12.505"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:11.309" endtime="20210509 21:37:12.505"/>
+</kw>
+<kw name="Selecionar primeiro item da lista de resultados" library="search">
+<kw name="Captar produto selecionado" library="search">
+<kw name="Get Text" library="Browser">
+<var>${produtoSelecionado}</var>
+<arg>xpath=//*[@id="search"]/div[1]/div/div[1]/div/span[3]/div[2]/div[7]/div/span/div/div/div[2]/h2/a</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<msg timestamp="20210509 21:37:13.459" level="INFO">${produtoSelecionado} = Bicicleta Aro 29 Caloi Velox Preta</msg>
+<status status="PASS" starttime="20210509 21:37:12.507" endtime="20210509 21:37:13.459"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:12.507" endtime="20210509 21:37:13.459"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//*[@id="search"]/div[1]/div/div[1]/div/span[3]/div[2]/div[7]/div/span/div/div/div[2]/h2/a</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210509 21:37:13.460" endtime="20210509 21:37:14.624"/>
+</kw>
+<kw name="Captar produto exibido" library="search">
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=#productTitle</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20210509 21:37:15.280" level="INFO">Wait for Element with selector: css=#productTitle</msg>
+<status status="PASS" starttime="20210509 21:37:14.625" endtime="20210509 21:37:15.280"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<var>${produtoExibido}</var>
+<arg>css=#productTitle</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<msg timestamp="20210509 21:37:15.826" level="INFO">${produtoExibido} = Bicicleta Aro 29 Caloi Velox Preta</msg>
+<status status="PASS" starttime="20210509 21:37:15.281" endtime="20210509 21:37:15.826"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:14.624" endtime="20210509 21:37:15.826"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${produtoSelecionado}</arg>
+<arg>${produtoExibido}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20210509 21:37:15.826" endtime="20210509 21:37:15.827"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:12.506" endtime="20210509 21:37:15.827"/>
+</kw>
+<kw name="Incluir produto ao carrinho" library="cart">
+<kw name="Click" library="Browser">
+<arg>css=#add-to-cart-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210509 21:37:15.860" endtime="20210509 21:37:17.384"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:15.859" endtime="20210509 21:37:17.385"/>
+</kw>
+<kw name="Acessar carrinho" library="cart">
+<kw name="Click" library="Browser">
+<arg>css=#nav-cart</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210509 21:37:17.418" endtime="20210509 21:37:18.635"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>xpath=//*[@id="sc-active-cart"]/div/div/div/h1</arg>
+<arg>contains</arg>
+<arg>Carrinho de compras</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<status status="PASS" starttime="20210509 21:37:18.636" endtime="20210509 21:37:19.044"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:17.417" endtime="20210509 21:37:19.044"/>
+</kw>
+<kw name="Fechar pedido" library="cart">
+<kw name="Click" library="Browser">
+<arg>css=#sc-buy-box-ptc-button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20210509 21:37:19.050" endtime="20210509 21:37:20.123"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>text=Fazer login</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<status status="PASS" starttime="20210509 21:37:20.124" endtime="20210509 21:37:20.400"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:19.049" endtime="20210509 21:37:20.401"/>
+</kw>
+<kw name="Take Screenshot" library="Browser" type="TEARDOWN">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window and saves it to ``path``. Saves it as a png.</doc>
+<msg timestamp="20210509 21:37:20.759" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210509 21:37:20.402" endtime="20210509 21:37:20.759"/>
+</kw>
+<status status="PASS" starttime="20210509 21:37:04.734" endtime="20210509 21:37:20.794"/>
+</test>
+<status status="PASS" starttime="20210509 21:37:04.678" endtime="20210509 21:37:21.101"/>
+</suite>
+<status status="PASS" starttime="20210509 21:36:52.468" endtime="20210509 21:37:21.108"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Buscar">Tests.Buscar</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Carrinho">Tests.Carrinho</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
